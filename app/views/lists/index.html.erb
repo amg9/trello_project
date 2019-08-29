@@ -1,0 +1,6 @@
+<h1><%= @board.name %> Lists</h1>
+<%= link_to "Add new list", new_board_list_path(@board) %>
+<% @lists.each do |list| %>
+  <h2><%= link_to list.name, board_list_path(@board, list) %></h2>
+<% end %>
+<%= link_to 'Back to board', board_path(@board) %>

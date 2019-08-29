@@ -2,3 +2,4 @@
 <%= link_to 'Edit board', edit_board_path(@board) %>
 <%= link_to 'Delete board', board_path(@board), method: :delete %>
 <%= link_to 'Back to boards', boards_path %>
+<%= link_to 'Lists', board_lists_path(@board) %>
