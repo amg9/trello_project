@@ -3,7 +3,8 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tasks = @list.tasks.all
+    # @tasks = @list.tasks.all
+    @tasks = Task.all_tasks(@list.id)
   end
 
   def show
@@ -41,7 +42,8 @@ class TasksController < ApplicationController
 
   private 
     def set_list
-      @list = List.find(params[:list_id])
+      # @list = List.find(params[:list_id])
+      @list = List.one_list(params[:list_id])
     end
 
     def task_params
@@ -49,6 +51,7 @@ class TasksController < ApplicationController
     end
 
     def set_task
-      @task = Task.find(params[:id])
+      # @task = Task.find(params[:id])
+      @task = Task.single_task(@list.id, params[:id])
     end
 end
