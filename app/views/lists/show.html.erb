@@ -1,4 +1,6 @@
 <h1><%= @list.name %></h1>
+<p>Position: <%= @list.position %></p>
 <%= link_to 'Back to lists', board_lists_path(@board) %>
 <%= link_to 'Edit list', edit_board_list_path(@board, @list) %>
 <%= link_to "Delete list", board_list_path(@board, @list), method: :delete %>
+<%= link_to "Tasks", list_tasks_path(@list) %>

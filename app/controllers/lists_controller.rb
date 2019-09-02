@@ -14,7 +14,7 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = @board.lists.create(list_params)
+    @list = @board.lists.new(list_params)
 
     if @list.save
       redirect_to board_list_path(@board, @list)
@@ -45,7 +45,7 @@ class ListsController < ApplicationController
     end
 
     def list_params
-      params.require(:list).permit(:name, :postition)
+      params.require(:list).permit(:name, :position)
     end
 
     def set_list

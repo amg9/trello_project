@@ -2,6 +2,6 @@
   <%= f.label :name %>
   <%= f.text_field :name, required: true %>
   <%= f.label :position %>
-  <%= f.number_field :position, min: 1, max: @board.lists.length %>
+  <%= f.number_field :position, min: 1, max: @board.lists.length, value: @board.lists.length %>
   <%= f.submit %>
 <% end %>
